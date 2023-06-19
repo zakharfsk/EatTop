@@ -12,12 +12,12 @@ To get started with the project, follow the steps below:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/project.git
+git clone https://github.com/zakharfsk/EatTop.git
 ```
 
 2. Change into the project directory:
 ```bash
-cd project
+cd EatTop
 ```
 
 3. Create a virtual environment (optional but recommended):
