@@ -1,0 +1,104 @@
+openapi: 3.0.2
+info:
+  title: 'API'
+  version: 'v1'
+paths:
+  /receipt/check/:
+    post:
+      operationId: createCheck
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Check'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Check'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Check'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Check'
+          description: ''
+      tags:
+      - receipt
+components:
+  schemas:
+    Check:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        order:
+          type: object
+          properties:
+            client_full_name:
+              type: string
+              maxLength: 100
+            client_phone:
+              type: string
+              maxLength: 100
+            client_email:
+              type: string
+              maxLength: 100
+            client_address:
+              type: string
+              maxLength: 100
+            client_comment:
+              type: string
+              maxLength: 100
+            dishes:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    maxLength: 100
+                  price:
+                    type: integer
+                  quantity:
+                    type: integer
+                required:
+                - name
+                - price
+                - quantity
+            total_price:
+              type: integer
+            payment_method:
+              type: string
+              maxLength: 100
+            delivery_method:
+              type: string
+              maxLength: 100
+          required:
+          - client_full_name
+          - client_phone
+          - client_email
+          - client_address
+          - client_comment
+          - dishes
+          - total_price
+          - payment_method
+          - delivery_method
+          writeOnly: true
+        point_id:
+          type: integer
+          writeOnly: true
+        order_id:
+          type: integer
+          writeOnly: true
+        response:
+          type: object
+          readOnly: true
+      required:
+      - order
+      - point_id
+      - order_id
