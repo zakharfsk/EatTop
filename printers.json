@@ -1,0 +1,62 @@
+[
+  {
+    "model": "receipt.Printer",
+    "pk": 1,
+    "fields": {
+      "name": "Printer 1",
+      "api_key": "api_key_1",
+      "check_type": "kitchen",
+      "point_id": 1
+    }
+  },
+  {
+    "model": "receipt.Printer",
+    "pk": 2,
+    "fields": {
+      "name": "Printer 2",
+      "api_key": "api_key_2",
+      "check_type": "client",
+      "point_id": 1
+    }
+  },
+  {
+    "model": "receipt.Printer",
+    "pk": 3,
+    "fields": {
+      "name": "Printer 3",
+      "api_key": "api_key_3",
+      "check_type": "kitchen",
+      "point_id": 2
+    }
+  },
+  {
+    "model": "receipt.Printer",
+    "pk": 4,
+    "fields": {
+      "name": "Printer 4",
+      "api_key": "api_key_4",
+      "check_type": "client",
+      "point_id": 2
+    }
+  },
+  {
+    "model": "receipt.Printer",
+    "pk": 5,
+    "fields": {
+      "name": "Printer 5",
+      "api_key": "api_key_5",
+      "check_type": "kitchen",
+      "point_id": 3
+    }
+  },
+  {
+    "model": "receipt.Printer",
+    "pk": 6,
+    "fields": {
+      "name": "Printer 6",
+      "api_key": "api_key_6",
+      "check_type": "client",
+      "point_id": 3
+    }
+  }
+]

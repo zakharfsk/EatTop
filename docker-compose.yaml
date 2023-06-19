@@ -1,0 +1,41 @@
+version: '3.6'
+services:
+
+  postgresql:
+    image: postgres:14.2
+    environment:
+      - "PGDATA=/var/lib/postgresql/data/pgdata"
+      - "POSTGRES_PASSWORD=qwerty"
+      - "POSTGRES_DB=backend_db"
+      - "POSTGRES_USER=postgres"
+    volumes:
+      - "postgresdata:/var/lib/postgresql/data"
+    ports:
+      - "127.0.0.1:15432:5432"
+
+  pgadmin4:
+    image: dpage/pgadmin4:6.8
+    environment:
+      PGADMIN_SERVER_NAME: postgresql
+      PGADMIN_DEFAULT_EMAIL: admin@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: qwerty
+    ports:
+      - "127.0.0.1:6789:80"
+    depends_on:
+      - "postgresql"
+    volumes:
+      - "pgadmin4data:/var/lib/pgadmin"
+
+  redis:
+    image: redis:6.2.6
+    ports:
+      - "127.0.0.1:16379:6379"
+
+  wkhtmltopdf:
+    image: openlabs/docker-wkhtmltopdf-aas
+    ports:
+      - "127.0.0.1:1234:80"
+
+volumes:
+  postgresdata:
+  pgadmin4data:
