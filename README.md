@@ -46,14 +46,18 @@ PostgreSQL database
 ```bash
 python manage.py migrate
 ```
+7. Add fixtures:
+```bash
+python manage.py loaddata printers
+```
 
-7. Create a superuser for the Django admin:
+8. Create a superuser for the Django admin:
 ```bash
 python manage.py createsuperuser
 ```
 Follow the prompts to enter the username and password for the superuser.
 
-8. Access the project:
+9. Access the project:
 
  - Django API: http://127.0.0.1
  - pgAdmin 4: http://127.0.0.1:6789
